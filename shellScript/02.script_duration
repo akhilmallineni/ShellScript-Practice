@@ -3,3 +3,10 @@
 Today_date=$(date)
 
 echo "Today's date is: $Today_date"
+
+Script_start_time=$(date +%s)
+sleep 5
+script_end_time=$(date +%s)
+script_duration=$((script_end_time - script_start_time))
+
+echo "Script duration: $script_duration seconds"
