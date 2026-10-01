@@ -6,11 +6,11 @@ echo "Today's date is: $Today_date"
 
 Script_start_time=$(date +%s)
 echo "Script started at: $Script_start_time"
-sleep 5
+sleep 5&
 script_end_time=$(date +%s)
 echo "Script ended at: $script_end_time"
 script_duration=$(($script_end_time - $Script_start_time))
 
 echo "Script duration: $script_duration seconds"
 
-echo "All variables passed to script: $@"
+echo "All variables passed to script: $0 $1 $2 $3 $4 $5 $6 $7 $8 $9"
