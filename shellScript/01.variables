@@ -14,4 +14,6 @@ echo "Nice Morning $PERSON_2"
 
 echo "Please type your username:"
 
-read USER_NAME=$1
+read USER_NAME
+ echo "username : $USER_NAME"
+ 
