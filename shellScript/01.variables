@@ -16,4 +16,8 @@ echo "Please type your username:"
 
 read USER_NAME
  echo "username : $USER_NAME"
- 
+
+echo "Please type your password:"
+
+read Password
+ echo "username : $Password"
