@@ -2,22 +2,19 @@
 
 echo "Hello World"
 
-#Conversation
-PERSON_1=AKHIL
-PERSON_2=CHANDU
+# Conversation
+PERSON_1="AKHIL"
+PERSON_2="CHANDU"
 
 echo "Hi $PERSON_2"
 echo "Hello Good Morning $PERSON_1"
 echo "Nice Morning $PERSON_2"
 
-#Username and Password
-
+# Username and Password
 echo "Please type your username:"
-
-read USER_NAME
- echo "username : $USER_NAME"
+read -r USER_NAME
+echo "username: $USER_NAME"
 
 echo "Please type your password:"
-
-read -s Password
- echo "username : $Password"
+read -r -s PASSWORD
+echo "password: $PASSWORD"
