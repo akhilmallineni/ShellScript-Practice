@@ -13,4 +13,4 @@ script_duration=$(($script_end_time - $Script_start_time))
 
 echo "Script duration: $script_duration seconds"
 
-echo "All variables passed to script: $0 $1 $2 $3 $4 $5 $6 $7 $8 $9"
+echo "All variables passed to script: $@"
