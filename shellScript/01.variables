@@ -19,5 +19,5 @@ read USER_NAME
 
 echo "Please type your password:"
 
-read Password
+read -s Password
  echo "username : $Password"
