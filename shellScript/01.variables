@@ -9,3 +9,9 @@ PERSON_2=CHANDU
 echo "Hi $PERSON_2"
 echo "Hello Good Morning $PERSON_1"
 echo "Nice Morning $PERSON_2"
+
+#Username and Password
+
+echo "Please type your username:"
+
+read USER_NAME=$1
