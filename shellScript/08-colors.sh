@@ -15,22 +15,22 @@ fi
 
 validate() {
     if [ $2 -ne 0 ]; then
-        echo -e "Installing $1 is ... ${R}FAILED${N}" | tee -a $LOG_File
+        echo -e "Installing $1 is ... $R FAILED $N" | tee -a $LOG_File
         exit 1
     else
-        echo -e "Installing $1 is ... ${G}SUCCESS${N}" | tee -a $LOG_File
+        echo -e "Installing $1 is ... $G SUCCESS $N" | tee -a $LOG_File
     fi
 }
 
 for package in $@
 do
     dnf list installed $package &>> LOG_File
-    if [ $? -ne 0]; then
+    if [ $? -ne 0 ]; then
         echo "Installing the $package"
         dnf install $package -y &>> LOG_File
         validate $package $?
     else
-        echo "$package is already installed ... ${Y}SKIPPING${N}"
+        echo "$package is already installed ... $YSKIPPING$N"
     fi
 
 done
