@@ -8,8 +8,6 @@ hgdfkjsfs
 
 echo "I am continuing..."
 
-#!/bin/bash
-
 USERID=$(id -u)
 LOG_DIR="/var/log/shellscript"
 LOG_File="$LOG_DIR/$0.log"
