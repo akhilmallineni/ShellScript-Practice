@@ -19,7 +19,7 @@ if [ $USER_ID -ne 0 ]; then
 fi
 
 VALIDATE () {
-    if [ $2 -ne 0]; then
+    if [ $2 -ne 0 ]; then
         echo "INstalling $1 is ... FAILDED" | tee -a $LOG_File
         exit 1
     else
