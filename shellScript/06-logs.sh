@@ -35,3 +35,4 @@ else
     echo "Installing MYSQL"
     dnf install mysql -y &>> $LOG_File
     VALIDATE MYSQL $?
+fi
