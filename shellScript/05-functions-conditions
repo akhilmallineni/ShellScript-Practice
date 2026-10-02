@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERID=$(id -u)
+USERID=$(id -u) # it will give you the user id of the current user
 
 # Check root access or not
 if [ $USERID -ne 0 ]; then
