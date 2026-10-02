@@ -29,7 +29,7 @@ VALIDATE () {
 
 dnf list installed mysql &>> $LOG_File   #&>> is used to redirect both stdout and stderr to the log file
 
-if [ $? -eq 0]: then
+if [ $? -eq 0 ]; then
    echo "MYSQL is already installed ... SKIPPING" | tee -a $LOG_File
 else
     echo "Installing MYSQL"
