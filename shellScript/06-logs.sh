@@ -13,7 +13,7 @@ LOG_File="$LOG_DIR/$0.log"
 
 mkdir -p $LOG_DIR  # to check if the log directory is present or not, if not present it will create the log directory
 
-if[ (id -u) =ne 0]; then
+if [ (id -u) -ne 0]; then
     echo "Please run this script with root access"
     exit 1
 fi
