@@ -1,6 +1,12 @@
 #!/bin/bash
 
-set -e
+#set -e
+
+echo "Hello World"
+
+hgdfkjsfs
+
+echo "I am continuing..."
 
 USERID=$(id -u)
 LOG_DIR="/var/log/shellscript"
