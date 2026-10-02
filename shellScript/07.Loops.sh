@@ -21,11 +21,11 @@ Validate () {
 for package in $@
 do
     dnf list installed $package &>> $LOG_File
-    if [ $? -ne 0 ]: then
-        echo "installinf the $package"
+    if [ $? -ne 0 ]; then
+        echo "installing the $package"
         dnf install $package -y &>> $LOG_File
         Validate $package $?
     else
         echo "$package is already installed ... SKIPPING" | tee -a $LOG_File
-    if
+    fi
 done
