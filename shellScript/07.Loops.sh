@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERID=(id -u)
+USERID=$(id -u)
 LOG_DIR="/var/log/shellscript"
 LOG_File="$LOG_DIR/$0.log"
 
