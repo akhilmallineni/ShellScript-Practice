@@ -35,7 +35,7 @@ get_instance_id(){
 for instance in $@
     do
         INSTANCE_ID=$(get_instance_id $instance)
-        if [ "ACTION" == "create"]; then
+        if [ "$ACTION" == "create"]; then
             if [ "$INSTANCE_ID" == "None" ]; then
                 echo -e "$TIMESTAMP [INFO] Creating instance for $instance"
                 INSTANCE_ID=$( aws ec2 run-instances \
@@ -86,7 +86,7 @@ for instance in $@
                 '
             echo "updated R53 record for: $instance"
         else
-            if [ $INSTANCE_ID == "None" ]; then
+            if [ "$INSTANCE_ID" == "None" ]; then
                 echo "$instance already destroyed, nothing to do..."
             else
                 aws ec2 terminate-instances --instance-ids $INSTANCE_ID
