@@ -11,7 +11,7 @@ N="\e[0m"
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
 #validation
-if [$# -lt 2]; then
+if [ $# -lt 2 ]; then
     echo -e "$R Missing the required parameters $N and please enter Paramaeters in the below format"
     echo "$0 <Create> [instance][instance2]....]"
     exit 1
@@ -20,7 +20,7 @@ fi
 ACTION=$1
 shift
 
-if [ACTION != "create" || ACTION != "delete"] then
+if [ "$ACTION" != "create" ] && [ "$ACTION" != "delete" ]; then
     echo -e "$R Invalid Action $N"
     echo "Please enter the action in the below format"
     echo "$0 <create|delete> [instance][instance2]....]"
