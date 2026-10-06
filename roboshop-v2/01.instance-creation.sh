@@ -27,10 +27,6 @@ if [ "$ACTION" != "create" ] && [ "$ACTION" != "delete" ]; then
     exit 1
 fi
 
-if ! command -v aws >/dev/null 2>&1; then
-    echo -e "$R AWS CLI is not installed or not available in PATH. Install AWS CLI and configure credentials before running this script. $N" >&2
-    exit 127
-fi
 
 get_instance_id(){
     name=$1
