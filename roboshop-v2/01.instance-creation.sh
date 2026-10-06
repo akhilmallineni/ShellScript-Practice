@@ -27,6 +27,11 @@ if [ "$ACTION" != "create" ] && [ "$ACTION" != "delete" ]; then
     exit 1
 fi
 
+if ! command -v aws >/dev/null 2>&1; then
+    echo -e "$R AWS CLI is not installed or not available in PATH. Install AWS CLI and configure credentials before running this script. $N" >&2
+    exit 127
+fi
+
 get_instance_id(){
     name=$1
     aws ec2 describe-instances --filters "Name=tag:Name,Values=roboshop-$name" "Name=instance-state-name,Values=running" --query "Reservations[0].Instances[0].InstanceId" --output text
@@ -35,7 +40,7 @@ get_instance_id(){
 for instance in $@
     do
         INSTANCE_ID=$(get_instance_id $instance)
-        if [ "$ACTION" == "create"]; then
+        if [ "$ACTION" == "create" ]; then
             if [ "$INSTANCE_ID" == "None" ]; then
                 echo -e "$TIMESTAMP [INFO] Creating instance for $instance"
                 INSTANCE_ID=$( aws ec2 run-instances \
@@ -53,7 +58,7 @@ for instance in $@
                 echo "roboshop-$instance already running: $INSTANCE_ID"
             fi
             #Update Route 53 record
-            if [ "$instance" == "frontend"]; then
+            if [ "$instance" == "frontend" ]; then
                 echo -e "$TIMESTAMP [INFO] Updating Route 53 record for $instance"
                 IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query "Reservations[0].Instances[0].PublicIpAddress" --output text)
                 R53_RECORD="$DOMAIN_NAME"
