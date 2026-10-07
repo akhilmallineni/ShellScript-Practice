@@ -4,7 +4,7 @@ SOURCE_DIR=$1
 DAYS=${3:-14}
 DEST_DIR=$2
 #check the source directory is provided or not
-if [ -z "$SOURCE_DIR" || -z "$DEST_DIR" ]; then
+if [ -z "$SOURCE_DIR" ] || [ -z "$DEST_DIR" ]; then
     echo "Please provide both the source and destination directories"
     exit 1
 fi
