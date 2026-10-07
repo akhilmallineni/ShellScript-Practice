@@ -10,7 +10,7 @@ if [ -z "$SOURCE_DIR" ]; then
 fi
 
 #check the source directory is exixts or not
-if [ ! -d "$SOURCE_DIR"]; then
+if [ ! -d "$SOURCE_DIR" ]; then
     echo "The provided source directory $SOURCE_DIR does not exist"
     exit 1
 fi
