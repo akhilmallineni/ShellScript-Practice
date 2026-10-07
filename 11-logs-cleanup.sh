@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SOURCE_DIR=$1
-DAYS=${2 :-14}
+DAYS=${2:-14}
 
 #check the source directory is provided or not
 if [ -z "$SOURCE_DIR" ]; then
