@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DISK_USAGE=$(df -h | grep -v Filesystem)
-THRESHOLD=10
+USAGE_THRESHOLD=10
 SERVER_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 
 while IFS= read -r line
