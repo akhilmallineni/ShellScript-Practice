@@ -18,7 +18,7 @@ fi
 echo "Scanning the directory $SOURCE_DIR for log files older than $DAYS days"
 FILES=$(find "$SOURCE_DIR" -type f -name "*.log" -mtime +$DAYS)
 
-while IFS= read -r $FILES;
+while IFS= read -r "$FILES";
 do
 
     echo "Deleting the log file: $FILES"
