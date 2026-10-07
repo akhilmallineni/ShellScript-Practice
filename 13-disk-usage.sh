@@ -4,15 +4,14 @@ DISK_USAGE=$(df -h | grep -v Filesystem)
 THRESHOLD=10
 SERVER_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 
-while IFS= read -r line;
+while IFS= read -r line
 do
     USAGE=$( echo $line | awk '{print $6}' | cut -d "%" -f1 )
     PARTITION=$( echo $line | awk '{print $7}' )
 
-    if [ $USAGE -gt $THRESHOLD ]; then
-        MESSAGE +="Disk usage on server $SERVER_IP for partition $PARTITION is above threshold: $USAGE%"
+    if [ "$USAGE" -ge "$USAGE_THRESHOLD" ]; then
+        MESSAGE+="High Disk Usage on $PARTITION: $USAGE <br>"
     fi
-
-done <<<$DISK_USAGE
+done <<< "$DISK_USAGE"
 
 echo "$MESSAGE"
